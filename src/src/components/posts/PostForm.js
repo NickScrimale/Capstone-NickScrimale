@@ -5,9 +5,7 @@ import './PostForm.css'
 
 export const PostForm = () => {
     const [post, setPost] = useState({
-        url: "",
-        title: "",
-        synopsis: ""
+        content: "",
     });
 
     const [isLoading, setIsLoading] = useState(false);
@@ -36,14 +34,8 @@ export const PostForm = () => {
 			<h2 className="postForm__title">New Post</h2>
 			<fieldset>
 				<div className="form-group">
-					<label htmlFor="title">Post title:</label>
-					<input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Article title" value={post.title} />
-				</div>
-			</fieldset>
-			<fieldset>
-				<div className="form-group">
-					<label htmlFor="synopsis">Type something:</label>
-					<input type="text" id="synopsis" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Article synopsis" value={post.content} />
+					<label htmlFor="content">Type something:</label>
+					<input type="text" id="content" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Post content" value={post.content} />
 				</div>
 			</fieldset>
             

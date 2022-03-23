@@ -10,6 +10,7 @@ import { PostCard } from "./posts/PostCard"
 import { PostForm } from "./posts/PostForm"
 import { PostList } from "./posts/PostList"
 import { QuestionList } from "./questions/QuestionList"
+import { BoardList } from "./board/BoardList"
  
 export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
     const PrivateRoute = ({ children }) => {
@@ -29,7 +30,7 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
 
           <Route exact path="/register" element={<Register />} />
           
-          <Route exact path="/" element={
+          <Route exact path="/trivia" element={
             <PrivateRoute>
               <QuestionList />
             </PrivateRoute>
@@ -38,13 +39,18 @@ export const ApplicationViews = ({ isAuthenticated, setIsAuthenticated }) => {
           <Route path="/questions/create" element={<QuestionForm />} />
 
           
-          
+          <Route exact path="/board" element={
+            <PrivateRoute>
+              <BoardList />
+            </PrivateRoute>
+          } />
   
           
           <Route path="/postFeed" element={<PostCard />} />
-          <Route path="/postForm" element={<PostForm />} />
+          
+          <Route path="/posts/create" element={<PostForm />} />
   
-          <Route  path="/postList" element={
+          <Route  path="/posts" element={
               <PrivateRoute>
                 <PostList />
               </PrivateRoute>

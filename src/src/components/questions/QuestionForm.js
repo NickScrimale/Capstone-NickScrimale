@@ -9,8 +9,8 @@ export const QuestionForm = () => {
 	// Define the initial state of the form inputs with useState()
 
 	const [question, setQuestion] = useState({
-		question: "",
-		answer: "",
+		question: ""
+		
 	});
 
 	const [isLoading, setIsLoading] = useState(false);
@@ -58,7 +58,7 @@ export const QuestionForm = () => {
 			<fieldset>
 				<div className="form-group">
 					<label htmlFor="name">Question:</label>
-					<input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Question" value={question.name} />
+					<input type="text" id="name"  required autoFocus className="form-control" placeholder="Question" value={question.name} />
 				</div>
 			</fieldset>
 			
